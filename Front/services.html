@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo" class="logo-box">
+            <div class="logo-text">Logo</div>
+        </div>
+        <div class="info">
+            <div class="group">Группа - ЭФБО-10-23</div>
+            <div class="name">Гоголев А.Е.</div>
+        </div>
+    </header>
+
+    <hr>
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="#">Первый семестр</a>
+        <a href="#">Второй семестр</a>
+        <a href="#">Услуги</a>
+        <a href="#">Авторизация</a>
+    </nav>
+
+    <hr>
+
+    <main>
+        <div class="sidebar">
+            <h3>Навигация по странице</h3>
+            <ul>
+                <li><a href="#service">Разработка веб-приложений</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1 id="service">Разработка веб-приложений</h1>
+            <div class="service-block">
+                <div class="service">
+                    <div class="service-photo"></div>
+                    <p>Сайт-визитка</p>
+                    <button class="order-button" id="openModal1">Заказать</button>
+                </div>
+
+                <div class="service">
+                    <div class="service-photo"></div>
+                    <p>Корпоративный сайт</p>
+                    <button class="order-button" id="openModal2">Заказать</button>
+                </div>
+
+                <div class="service">
+                    <div class="service-photo"></div>
+                    <p>Интернет-магазин</p>
+                    <button class="order-button" id="openModal3">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Модальные окна для каждой кнопки -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Заказать Сайт-визитка</h2>
+            <p>Заполните форму и мы обязательно свяжемся с вами в ближайшее время для уточнения деталей.</p>
+            <form id="contactForm1">
+                <label for="name">Как вас зовут:</label>
+                <input type="text" id="name1" name="name" placeholder="Введите ваше имя" required>
+    
+                <label for="email">Ваш e-mail:</label>
+                <input type="email" id="email1" name="email" placeholder="Введите ваш e-mail" required>
+    
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone1" name="phone" placeholder="Введите ваш телефон" required>
+    
+                <label for="country">Страна:</label>
+                <select id="country1" name="country" required>
+                    <option value="">Выберите страну</option>
+                    <option value="Россия">Россия</option>
+                    <option value="Украина">Украина</option>
+                    <option value="Казахстан">Казахстан</option>
+                    <option value="Беларусь">Беларусь</option>
+                    <!-- Другие страны -->
+                </select>
+    
+                <label for="date">Дата:</label>
+                <input type="text" id="date1" name="date" placeholder="ДД/ММ/ГГГГ" pattern="\d{2}/\d{2}/\d{4}" required>
+    
+                <label for="comments">Комментарии:</label>
+                <textarea id="comments1" name="comments" placeholder="Ваши комментарии"></textarea>
+    
+                <label for="agreement">
+                    <input type="checkbox" id="agreement" name="agreement" required> 
+                    Я согласен на обработку моих персональных данных
+                </label>
+    
+                <button type="submit">Отправить</button>
+            </form>
+
+             <!-- Сообщение об успешной отправке -->
+        <div id="successMessage1" class="success-message" style="display:none;">
+            Форма успешно отправлена!
+        </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Заказать Корпоративный сайт</h2>
+            <p>Заполните форму, и мы свяжемся с вами в ближайшее время для уточнения деталей.</p>
+            <form id="contactForm2">
+                <label for="name">Как вас зовут:</label>
+                <input type="text" id="name2" name="name" placeholder="Введите ваше имя" required>
+    
+                <label for="email">Ваш e-mail:</label>
+                <input type="email" id="email2" name="email" placeholder="Введите ваш e-mail" required>
+    
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone2" name="phone" placeholder="Введите ваш телефон" required>
+    
+                <label for="country">Страна:</label>
+                <select id="country2" name="country" required>
+                    <option value="">Выберите страну</option>
+                    <option value="Россия">Россия</option>
+                    <option value="Украина">Украина</option>
+                    <option value="Казахстан">Казахстан</option>
+                    <option value="Беларусь">Беларусь</option>
+                    <!-- Другие страны -->
+                </select>
+    
+                <label for="date">Дата:</label>
+                <input type="text" id="date2" name="date" placeholder="ДД/ММ/ГГГГ" pattern="\d{2}/\d{2}/\d{4}" required>
+    
+                <label for="comments">Комментарии:</label>
+                <textarea id="comments2" name="comments" placeholder="Ваши комментарии"></textarea>
+    
+                <label for="agreement">
+                    <input type="checkbox" id="agreement2" name="agreement" required>
+                    Я согласен на обработку моих персональных данных
+                </label>
+    
+                <button type="submit">Отправить</button>
+            </form>
+
+             <!-- Сообщение об успешной отправке -->
+        <div id="successMessage2" class="success-message" style="display:none;">
+            Форма успешно отправлена!
+        </div>
+        </div>
+    </div>
+    
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Заказать Интернет-магазин</h2>
+            <p>Заполните форму, и мы свяжемся с вами в ближайшее время для уточнения деталей.</p>
+            <form id="contactForm3">
+                <label for="name">Как вас зовут:</label>
+                <input type="text" id="name3" name="name" placeholder="Введите ваше имя" required>
+    
+                <label for="email">Ваш e-mail:</label>
+                <input type="email" id="email3" name="email" placeholder="Введите ваш e-mail" required>
+    
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone3" name="phone" placeholder="Введите ваш телефон" required>
+    
+                <label for="country">Страна:</label>
+                <select id="country3" name="country" required>
+                    <option value="">Выберите страну</option>
+                    <option value="Россия">Россия</option>
+                    <option value="Украина">Украина</option>
+                    <option value="Казахстан">Казахстан</option>
+                    <option value="Беларусь">Беларусь</option>
+                    <!-- Другие страны -->
+                </select>
+    
+                <label for="date">Дата:</label>
+                <input type="text" id="date3" name="date" placeholder="ДД/ММ/ГГГГ" pattern="\d{2}/\d{2}/\d{4}" required>
+    
+                <label for="comments">Комментарии:</label>
+                <textarea id="comments3" name="comments" placeholder="Ваши комментарии"></textarea>
+    
+                <label for="agreement">
+                    <input type="checkbox" id="agreement3" name="agreement" required>
+                    Я согласен на обработку моих персональных данных
+                </label>
+    
+                <button type="submit">Отправить</button>
+            </form>
+
+             <!-- Сообщение об успешной отправке -->
+        <div id="successMessage3" class="success-message" style="display:none;">
+            Форма успешно отправлена!
+        </div>
+        </div>
+    </div>
+    
+
+    <hr>
+  
+   <footer>
+        <p>&copy; Гоголев Андрей Евгеньевич, 2024</p>
+        <a href="https://t.me/nicrosdefox" class="telegram-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="telegram-icon">
+        </a>
+    </footer>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
