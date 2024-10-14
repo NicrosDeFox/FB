@@ -62,7 +62,8 @@ hr {
 /* Стили навигационного меню */
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* Равномерное распределение */
+    align-items: center; /* Выравнивание по вертикали */
     padding: 15px;
     background-color: #1e1e1e; /* Темный фон для навигации */
 }
@@ -71,8 +72,9 @@ nav a {
     text-decoration: none;
     color: #ff8c00; /* Яркий оранжевый для ссылок */
     font-weight: bold;
-    padding: 10px 20px;
-    transition: color 0.3s, background-color 0.3s;
+    padding: 10px 15px; /* Добавлены отступы */
+    border-radius: 5px; /* Закругление углов ссылок */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
@@ -143,6 +145,7 @@ main {
     color: #0056b3; /* Цвет ссылок при наведении */
 }
 
+/* Контентная часть */
 .content {
     width: 80%;
     padding-left: 20px;
@@ -154,7 +157,6 @@ main {
     color: #f5f5f5; /* Светлые заголовки */
 }
 
-/* Заголовки */
 h1 {
     font-size: 32px;
     color: #ff8c00; /* Оранжевый для H1 */
@@ -203,32 +205,68 @@ h3 {
     height: 288px; /* Соответствующая высота с правильными пропорциями */
 }
 
-/* Стили для карточек услуг */
+/* Стили для контейнера сетки */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    grid-template-rows: repeat(2, auto); /* Две строки с автоматической высотой */
+    gap: 20px; /* Промежуток между элементами */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Стили для элементов сетки */
+.grid-item {
+    background-color: #2c2c2c; /* Темный фон для элементов */
+    border: 1px solid #333; /* Граница для элементов */
+    border-radius: 5px; /* Закругление углов */
+    padding: 20px; /* Отступ внутри элементов */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для элементов */
+    transition: transform 0.3s; /* Плавный переход при наведении */
+}
+
+.grid-item:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+/* Контейнер для карточек */
 .service-block {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Позволяет карточкам обтекать */
+    justify-content: space-between; /* Равномерное распределение карточек */
     gap: 20px; /* Отступы между карточками */
 }
 
+/* Карточки услуг */
 .service {
-    flex: 1;
-    min-width: 300px; /* Минимальная ширина карточки */
-    margin: 10px;
-    padding: 20px; /* Общие отступы внутри блока услуги */
-    height: auto;
+    flex: 1 1 calc(30% - 20px); /* Ширина карточек 30% минус отступы */
+    min-width: 300px; /* Максимальная ширина карточки */
+    padding: 20px;
+    background-color: #1e1e1e; /* Темный фон карточек */
     border: 1px solid #333; /* Граница карточки */
-    border-radius: 5px; /* Закругленные углы */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для карточек */
+    position: relative; /* Позволяет использовать абсолютное позиционирование для дочерних элементов */
+    border-radius: 5px;
     overflow: hidden; /* Скрытие переполнения */
-    background-color: #1e1e1e; /* Темный фон для карточек */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Тень для карточек */
-    position: relative; /* Для абсолютного позиционирования элементов внутри */
 }
 
 .service-photo {
-    height: 300px; /* Высота блока с изображением */
+    position: relative; /* Позволяет использовать абсолютное позиционирование для внутренних элементов */
     background-size: cover; /* Обложка для фона */
     background-position: center; /* Центрирование изображения */
+    width: 100%; /* Занимает 100% ширины родительского элемента */
+    height: 300px; /* Высота автоматически, чтобы сохранить пропорции */
 }
+
+.service-photo img {
+    position: absolute; /* Абсолютное позиционирование для изображения */
+    top: 10px; /* Пример отступа сверху */
+    left: 10px; /* Пример отступа слева */
+    width: 100%; /* Ширина изображения 100% от родителя */
+    height: auto; /* Высота изображения автоматически */
+    border-radius: 5px; /* Закругление углов изображения */
+}
+
 
 .service p {
     margin-top: 10px;
@@ -243,13 +281,18 @@ h3 {
     font-size: 16px; /* Размер шрифта */
     margin-top: 15px;
     transition: background-color 0.3s; /* Плавный переход для цвета фона */
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 10px; /* Отступ от низа */
+    right: 10px; /* Отступ от правого края */
+    padding: 10px 15px; /* Отступ внутри кнопки */
+    border-radius: 5px; /* Закругление углов */
 }
 
 .order-button:hover {
-    background-color: #e67e00; /* Более темный оранжевый при наведении */
+    background-color: #e07b00; /* Темнее при наведении */
 }
 
-/* Стили кнопок */
+/* Стили для кнопок */
 button {
     padding: 10px 20px;
     border: none;
