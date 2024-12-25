@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Assets/CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/node_modules/jquery.maskedinput/src/jquery.maskedinput.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="JS/main.js"></script>
+    <title>Услуги</title>
+</head>
+<body>
+    <header
+        style="width: 95%; display: flex; flex-direction: row; justify-content: space-between; margin: auto; align-items: center">
+        <h3 href="index.html">HTML</h3>
+        <div style="text-align: right;">
+            <h3>ЭФБО-10-23</h3>
+            <h3>Гоголев Андрей Евгеньевич</h3>
+        </div>
+    </header>
+    <div class="buttons" style="border-top: 2px solid #444; border-bottom: 2px solid #444;">
+        <a href="index.html">Главная</a>
+        <a href="firstsem.html">Первый семестр</a>
+        <a href="#">Второй семестр</a>
+        <a href="services.html">Услуги</a>
+        <a href="#">Авторизация</a>
+    </div>
+    <main style="width: 95%; margin: auto; min-height: calc(100vh - 270px);">
+        <aside style="padding-top: 10px; display: flex; flex-direction: column; gap: 10px; grid-column: 1; grid-row: 1; border-right: 2px solid #444;">
+            <h3>Навигация по странице</h3>
+            <a class="navigationbutton">Фронтенд</a>
+            <a class="navigationbutton">Бэкенд</a>
+        </aside>
+        
+        <div style="grid-column: 2; grid-row: 1; padding-top: 10px;">
+            <h1>Разработка веб-приложений</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="item text-center">
+                            <img src="Assets/Images/visitka.png" class="servicebox">
+                            <h2>Сайт-визитка</h2>
+                            <a class="servicebutton">Заказать</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="item text-center">
+                            <img src="Assets/Images/onlinestore.png" class="servicebox">
+                            <h2>Интернет-магазин</h2>
+                            <a class="servicebutton">Заказать</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="item text-center">
+                            <img src="Assets/Images/corporat.jpg" class="servicebox">
+                            <h2>Корпоративный сайт</h2>
+                            <a class="servicebutton">Заказать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" style="color:#ddd">&times;</span>
+            <h1 style="font-size: 20px;">Разработка веб-приложения</h1> 
+            <p>Заполните форму и мы обязательно свяжемся с вами в ближайшее время для уточнения деталей</p>
+            <form style="display: flex; flex-direction: column; gap: 10px; width: 80%; padding-top: 10px;" id="modalForm">
+                <div style="display: flex; justify-content: space-between;">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" name="email" placeholder="user@email.com">
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <label for="phone">Номер телефона:</label>
+                    <input type="phone" id="phone" name="phone" placeholder="+7 (999) 999-99-99">
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <label for="country">Страна: </label>
+                    <select id="countryDropdown" style="width: 170px;">
+                        <option>Загрузка стран...</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 317px;">
+                    <label for="date">Дата:</label>
+                    <input style="margin-right: -25px;" type="date" id="date" name="date">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items:center; width: 399px;">
+                    <label for="comment">Комментарий:</label>
+                    <textarea style="width: 165px; resize: none; height: 60px; font-size: 14px;"></textarea>
+                </div>
+                <button type="submit" class="headbtn" style="margin-left: 20%; margin-top: 5%; align-self: center;">Отправить</button>
+                <p id="modalFail" style="display: none; align-self:center; margin-left: 20%; color:#ff2233">Нужно заполнить все поля!</p>
+            </form>
+        </div>
+    </div>
+    <div id="modalSuccess" class="modalsuccess">
+        <div class="modal-content">
+            <span class="close" id="closeSuccess" style="color:#ddd">&times;</span>
+            <h1 style="font-size: 20px;">Заявка успешно отправлена!</h1>
+        </div>
+    </div>
+    <footer
+        style="width: 95%; margin: auto; border-top: 2px solid #444; display: flex; justify-content: space-between; align-items: center; position: relative;">
+        <div></div>
+        <p>© Гоголев Андрей Евгеньевич, 2024</p>
+        <div style="display: flex; flex-direction: row; gap: 20px; align-items: center; padding-top: 20px;">
+            <a href="https://t.me/nicrosdefox">
+                <img src="Assets/Images/Telegram_2019_Logo.svg" style="width: 45px; height: 75px;">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
